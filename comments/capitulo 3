@@ -1,0 +1,582 @@
+Variáveis e entrada de dados.
+
+3.1 Nomes de variáveis
+
+Em Python variáveis devem iniciar com uma letra,
+podendo conter números e o símbolo sublinha (_).
+
+Exemplos de regras aceitas:
+
+a1 - embora contenha um número, o nome a1 inicia 
+com letras.
+
+velocidade - Nome formado por letras.
+
+salário_médio - O símbolo (_) é permitido e facilita 
+a leitura de nomes grandes.
+
+_b - o sublinhado (_) é aceito em nomes de variáveis, 
+mesmo no início.
+
+Exemplos que não são aceitos:
+
+salário médio - Nomes de variáveis não podem conter 
+espaços brancos.
+
+1a - Nomes de variáveis não podem começar com números.
+
+Atenção!!!!
+<<<<<<< HEAD
+A versão 3 permite o uso de acentos em nomes de 
+variáveis, porque a linguagem representa praticamente
+todas as letras dos alfabetos conhecidos.
+
+Variáveis tem outras propriedades, além de nome e conteúdo.
+=======
+A versão 3 permite o uso de acentos em nomes de variáveis, porque a linguagem representa praticamente todas as letras
+dos alfabetos conhecidos.
+
+Variáveis tem outras propriedades, além d enome e conteúdo.
+>>>>>>> 1193b24bc47d658257455f572fb5e1b5b935f6b1
+São as defnições que a variável armazena. 
+Python tem vários tipos de dados, mas as mais conhecidas 
+são os int, float e strings.
+Podem armazenar números e letras, além de valores como 
+verdadeiro e falso.
+
+
+3.2 Variáveis numéricas
+
+Armazenam números inteiros ou de ponto flutuante.
+<<<<<<< HEAD
+Os inteiros são aqueles sem parte decimal, 
+como 1,0, -5, 550, -47, 30000.
+Os flutuantes ou decimais são aquele com parte 
+decimal: 1.0, 5.478, 10.478, 30000.4.
+Em Python, e na maioria das linguagens de programação, utilizamos o ponto, e não a vírgula, como separador 
+entre a parte inteira e fracionária de um número. Não utilizamos nada como separador de milhar. 
+Exemplo: 1.000.000(um milhão) escreve 100000. 
+=======
+Os inteiros são aqueles sem parte decimal, como 1,0, -5, 550, -47, 30000.
+Os flutuantes ou decimais são aquele com parte decimal: 1.0, 5.478, 10.478, 30000.4.
+Em Python, e na maioria das linguagens de programação, utilizamos o ponto, e não a vírgula, como separador entre a parte inteira e fracionária de um número. Não utilizamos 
+nada como separador de milhar. Exemplo: 1.000.000(um milhão)
+é escrito 100000. 
+>>>>>>> 1193b24bc47d658257455f572fb5e1b5b935f6b1
+Uma forma de separar é utilizar o sublinhador 
+
+>>> 1_000 # mil
+1000
+
+>>> 1_000_000 # Um milhão
+100000
+
+3.2.1 Representação de valores númericos
+
+<<<<<<< HEAD
+binário - pode ser utilizado o prefixo 0b, em octal com o prefixo 0o em hexadecimal 
+o prefixo 0x
+
+>>>a = 0b10 #Base 2 - binário
+>>> a
+2
+
+>>>c = 0b10 #Base 16 - hexadecimal
+>>> b
+16
+
+>>>c = 0b10 #Base 8 - octal
+>>> c
+8
+
+3.3 Variáveis do tipo lógico.
+
+tipo lógico ou booleano
+
+resultado = True
+aprovado = False
+
+3.3.1 Operadores relacionais a
+
+Operador                  Operação            Símbolo matemático
+==                        igualdade                  =
+>                         maior que                  >
+<                         menor que                  <
+!=                        diferente                  ≠
+>=                        maior ou igual             ≥
+<=                        menor ou igual             ≤	
+
+Exemplo: 1
+
+nota = 8
+média = 7
+aprovado = nota > média
+print(aprovado)
+
+3.3.2 Operadores Lógicos
+
+not(não) and(e) or(ou)
+
+Sendo traduzidos:
+
+não( ~ negação)  e(^ conjunção) ou(V disjunção)
+
+Operador Python           Operação
+     not                    não
+     and                     e
+     or                      ou  
+
+
+3.3.2.1 Operador not
+
+Not é o operador mais simples, e precisa de apenas um operador.
+A operação pode ser chamada também de iversão, porque um valor verdadeiro
+negado se torna falso e vice-versa.
+
+Tabela verdade do operador not (não)
+
+V1                not V1 
+
+V                   F
+F                   V
+
+Exemplo: 
+
+>>> not True
+False
+
+>>>not False
+True
+
+3.3.2.2 Operador and 
+
+Resulta verdadeiro apenas quando seus dois operadores forem verdadeiros
+
+Tabela verdade do operador and (e)  
+
+V1          V2      V1 or V2
+
+V           V          V
+V           F          F   
+F           V          F 
+F           F          F 
+
+3.3.2.3 Operador or (ou)
+
+A regra fundamental é que seus dois operadores tem que ser False para que 
+ele seja False.
+
+Tabela verdade do operador or (ou)
+
+V1          V2        V1 or V2
+
+V           V            V
+V           F            V
+F           V            V
+F           F            F
+
+3.3.3 Expressões lógicas 
+
+Quando uma expressão tiver mais que um operador lógico;
+Em primeiro lugar avalia-se o not(não) e em seguida o and(e), somente depois o or(Ou).
+
+Exemplo: 
+
+True or False and not True or False 
+     True or False and False  
+         True or False 
+            True   
+
+Os operadors relacionauis também podem ser utilizados em expressões
+com operadores lógicos.
+
+           salário > 1000 and idade > 18
+
+Nesse caso, os operadores relacionais devem ser avaliados primeiro.
+
+Exemplo:   salário > 1000 and idade > 18
+           salário = 100 e idade = 20
+
+Teremos: salário > 1000 and idade > 18
+            100 > 1000 and 20 > 18
+               False and True 
+                  False
+
+Exemplo 2: salário > 1000 and idade > 18
+            2000 > 100 and 30 > 18
+               False and True
+                  True 
+
+
+3.4 Variáveis String 
+
+Esse tipo de variável armazena cadeias de caracteres como nome e textos em geral.
+Cadeia de acaracteres: letras, números, sinais de pontuação, etc. 
+
+Exemplo: João e Maria comem pão.
+
+Para delimitarmos uma string utilizamos o " "
+
+"João e Maria comem pão"
+
+O tamanho de uma string pode ser obtido utilizando-se a função len.
+Essa função retorna o número de caracteres na string. 
+Lembrando que ela retorna um valor do tipo inteiro. 
+Se a string for vazia " " retorna o valor de zero.
+O primeiro caracter da string é 0(ZERO)
+
+A - 0
+B - 1
+C - 2
+D - 3
+E - 4
+Assim, por diante!
+
+3.4.1 Operações com strings
+
+As variáveis do tipo string suportam operações como fatiamento, concatenação 
+e composição. Fatiamento utiliza uma parte da string ou uma fatia.
+Concatenação junção de ou mais strings em uma nova string maior.
+Composição: consiste em utilizar strings como modelo inserindo outras strings.
+
+3.4.1.1 Concatenação 
+
+Quando o conteúdo de várias strings podem ser somados (concatenados), isso se chama 
+concatenação. Utilizamos a adição (+). Exemplo "AB" + "C" = "ABC".
+Caso especial: repetição de uma string várias vezes.
+
+"A" * 3 = "AAA" 
+
+Exemplos: 
+
+>>> s = "ABC"
+>>>s + "C"
+'ABCC'
+>>> s + "D" * 4 
+'ABCDDDD'
+>>> "X" + "-" * 10 + "X" 
+'X----------X'
+>>> s + "x4 =" + s * 4 
+'ABCx4 = ABCABCABCABC'
+
+3.4.1.2 Composição
+
+Vejamos 
+
+"João tem X anos", X é uma variável numérica.
+
+Usando a composição de string do Python, podemos escrever de forma simples e clara:
+
+"João tem %d anos" % X
+
+O símbolo % foi utilizado para indicar a composição anteior com o conteúdo da 
+variável X. 
+O %d dentro da primeira string é o marcador de posição.
+O marcador indica que naquela posição está sendo colocado um valor inteiro, daí o %d.
+
+                     Tabela de Marcadores 
+
+Marcador          Tipo  
+%d              Números inteiros
+%s              Strings
+%f              Números decimais
+
+Se precisar de um número como 001 ou 002, pode utilizar "%03d" % X. 
+Se quiser com que o número ocupe três posições, mas não desejar zeros a esquerda,
+basta retirar o zero e utilizar "%3d" % X.
+
+Exemplos: 
+
+>>> idade = 22
+>>> "[%d]" % idade
+[22]
+>>> "[%03d]" % idade
+[022]
+>>> "[%3d]" % idade
+[ 22]
+>>>"[%-3d]" % idade
+[22 ]
+
+Quando formatar n° decimais pode utilizar dois valores entre o % e a letra f.
+% indica total de caracteres a reservar;
+f - n° de casas decimais;
+
+Isso é muito importante quando você for representar quantidade de dinheiro,
+por exemplo, R$ 5 pode utilizar "R$%f" % 5, porém o resultado nem sempre é o 
+esperamos. Vejamos: 
+
+>>> "%5f" % 5
+5.000000
+
+>>> "%5.2f" % 5
+5.00
+
+>>> "%10.5f" % 5
+5.00000
+
+Percebe-se realmente quando combinamos vários valors em uma nova string.
+
+Exemplo: João tem 22 anos e apenas R$ 51,34 no bolso.
+
+Então, fazemos assim:
+
+"%s tem %d anos e apenas R$%5.2f no bolso" % ("João", 22, 51.34)
+
+Se tivermos mais de um marcador na string, é obrigatório a escrever os valores 
+a substituir entre parênteses.
+
+Exemplos: 
+
+>>> nome = "João"
+>>> idade = 22
+>>> grana = 51.34
+>>> "%s tem %d anos e apenas R$%f no bolso" % (nome, idade, grana)
+João tem 22 anos e R$ 51.3400000 no bolso.
+
+>>> "%12s tem %3d anos e apenas R$%5.2f no bolso" % (nome, idade, grana)
+         João tem 22 anos e R$ 51.34 no bolso.
+
+>>> "%12s tem %03d anos e apenas R$%5.2f no bolso" % (nome, idade, grana)
+         João tem 022 anos e R$ 51.34 no bolso.
+
+>>> "%-12s tem %-3d anos e apenas R$%-5.2f no bolso" % (nome, idade, grana)
+João        tem 22 anos e R$ 51.34 no bolso.
+
+Esse tipo de composição embora válida, tem caído em desuso.
+
+Agora utilizamos de conceitos mais modernos que é o método format.
+Vejamos a reescrita do exemplo anterior:
+
+>>> nome = "João"
+>>> idade = 22
+>>> grana = 51.34
+>>> "{} tem {} anos e R${} no bolso" .format(nome, idade, grana)
+'João tem 22 anos e R$ 51.34 no bolso.'
+
+>>>  "{:12} tem {:3} anos e R${:5.2f} no bolso" .format(nome, idade, grana)
+'João        tem 22 anos e R$ 51.34 no bolso.'
+
+>>>  "{:12} tem {:03} anos e R${:5.2f} no bolso" .format(nome, idade, grana)
+'João        tem 022 anos e R$ 51.34 no bolso.'
+
+>>> "{<12} tem {:<3} anos e R${:5.2f} no bolso" .format(nome, idade, grana)
+'João        tem 22 anos e R$ 51.34 no bolso.'
+
+Essa forma é mais compacta e poderosa do que o %, porém, é necessário conhecer a 
+forma antiga por conta dos programas mais antigos que ainda usam essa notação.
+
+Observe bem as diferenças e lembre-se que no format não é obrigatório especificar o 
+tipo. Formatação de dinheiro usamos {:5.2f} para imprimir de forma equivalente a %5.2f.
+No caso de máscaras com sinal - , substituímos por <
+
+Exemplo: 
+
+%-12s passou a {:<12}.
+
+Como o Python é uma linguagem que não para de evoluir, existe na versão 3.6 uma 
+terceira forma de ecrever strings. É chamada de f-string, porque escreve a letra f
+antes de abrirmos as aspas. 
+
+Vejamos o programa anterior nessa nova escrita:
+
+>>> nome = "João"
+>>> idade = 22
+>>> grana = 51.34
+>>> f"{nome} tem {idade} anos e R${grana} no bolso" 
+'João tem 22 anos e R$ 51.34 no bolso.'
+
+>>> f"{nome:12} tem {idade:3} anos e R${grana:5.2f} no bolso" 
+'João        tem 22 anos e R$ 51.34 no bolso.'
+
+>>> f "{nome:12} tem {idade:03} anos e R${grana:5.2f} no bolso"
+'João        tem 022 anos e R$ 51.34 no bolso.'
+
+>>> f"{nome:<12} tem {idade:<3} anos e R${grana:5.2f} no bolso" 
+'João        tem 22 anos e R$ 51.34 no bolso.'
+
+Importante lembrar que prefixamos a string com a letra f, escreve-se o nome da 
+variável diretamente na string entre {}. 
+Essa é a forma mais utilizada na linguagem Pyhton atualmente.
+
+3.4.1.3 Fatiamentos de strings
+
+Imagine o exemplo dos caracteres AB utilizando como índice [0:2] (A,B,C).
+O fatiamento funciona com a utilização de dois pontos no índice da string. 
+N° da esquerda dos dois pontos indica a posição de início da fatia;
+N° da direita, do fim da fatia.
+
+Atenção: no exemplo acima utilizamos 2; e o C que é o caracter na posição 2 
+não foi incluído. Isso ocorre porque o final da fatia não é incluído nela.
+Entenda [0:2] como a fatia de caracteres da posição 0 até a posição 2, sem
+incluí-la, ou o intervalo fechado em 0 e aberto em 2.
+
+Vejamos outros exemplos: 
+
+>>> s = "ABCDEFGHI"
+>>> s[0:2]
+AB
+>>> s[1:2]
+B
+>>> s[2:4]
+CD
+>>> s[0:5]
+ABCDE
+>>> s[1:8]
+BCDEFGH  
+
+
+
+3.5 Sequências e tempo. 
+
+Um programa executa linha por linha.
+Se trabalhamos com variáveis, o conteúdo das variáveis pode mudar com o tempo.
+Porque a cada vez que alteramos o valor de uma variável, o valor pode mudar 
+com o tempo.
+
+Observe este código: 
+
+# Programa 3.1 - Exemplo de sequeẽncia e tempo
+
+dívida = 0 
+compra = 100
+dívida = dívida + compra
+compra = 200
+dívida = dívida + compra
+compra = 300
+dívida = dívida + compra
+compra = 02
+print(dívida)
+
+Em resumo a dívida vai aumentando de acordo com a compra.
+
+3.6 Rastreamento
+
+Uma das principais diferenças entre ler um texto e um programa é justamente seguir
+as mudanças de valores de cada variável conforme o programa é executado.
+Um programa não pode ser lido como um simples texto, mas cuidadosamente analisado
+linha a linha.
+Importante: ao fazer um programa é necessário verificar linha a linha os efeitos
+e mudanças causados no valor de cada variável.
+Para prorgamar corretamente, é preciso ser capaz de entender o que cada linha de 
+programa significa e o que produz. Isso é chamado de rastreamento, o que é muito
+eficaz para encontrar erros nos programas que está sendo escrito.
+Uma dica: use lápis e borracha e folha de papel para escrever os programas.
+O rastremento tem que ser feito linha por linha, e não começar a analisar no meio 
+do programa e sim desde o início. 
+
+3.7 Entrada de Dados. 
+
+A melhor coisa para escrever um programa é poder escrever valores para serem utilizados 
+e escrever a solução de um problema e aplicá-la várias vezes. Portanto, precisamos 
+melhorar nossos programas de forma a permitir que novos valores sejam fornecidos 
+durante sua execução, de modo que poderemos executá-los com valores diferentes sem 
+alterar os programas em si.
+
+Entrada de dados = quando o programa recebe dados ou valores por um dispositivo de 
+entrada de dados (como o teclado d computador) ou de um arquivo de discos.
+
+A função input é utilizada para solicitar dados do usuário. 
+
+Exemplo - input
+
+x = input("Digite um número:")
+print(x) 
+
+Que produz a seguinte saída na tela: 
+
+Digite um número: 5
+5
+
+Outro exemplo:
+
+nome = input("Digite seu nome:") #1
+print(f"Você digitou {nome}")
+print(f"Olá, {nome}!")
+
+Em 1 solicitamos a entrada de dados. Depois a mensagem "Digite seu nome:" é exibida, 
+e o programa para até que o usuário pressione a tecla ENTER. Somente então o resto
+do programa é executado. Vejamos a saída de dados quando digitamos João como nome:
+
+Digite seu nome: João 
+Você digitou João 
+Olá, João!
+
+3.7.1 Conversão da entrada de dados
+
+A função input sempre retorna valores do tipo string, ou seja, não importa se digitarmos
+apenas número, o reultado sempre é uma string.
+Vamos utilizar a função int para converter o valor retornado em um número inteiro, e 
+a função float para convertê-lo em um número decimal ou de ponto flutuante.  
+
+Exemplo de um bônus por tempo de serviço:
+
+anos = int(input("Anos de serviço: "))
+valor_por_anos = float(input("Valor por ano: "))
+bônus = anos * valor_por_ano
+print(f"Bônus de R$: {bônus:5.2f}")
+
+3.7.2 Erros comuns
+
+Devemos estar para os erros em nossos programas, principalmente na entrada de dados.
+
+Vejamos:
+
+nome = input("Digite o seu nome")
+idade = int(input("Digite sua idade:"))
+saldo = float(input("Digite o saldo da sua conta bancária:"))
+print(nome) 
+print(idade)
+print(saldo)
+
+Vamos ver o resultado, e o correto é a ausência de erros durante a função input,
+ou durante a conversão do valor retornado pela função. 
+
+Digite o seu nome: João
+Digite a sua idade: 42
+Digite o saldo da sua conta bancária: 15756.34
+João
+42
+15756.34
+
+Outro exemplo de entrada de dados bem sucedida. Inserimos o float, portanto mesmo 
+inserindo 34 o valor foi convertido para 34.0
+
+Digite o seu nome: Maria
+Digite a sua idade: 28
+Digite o saldo da sua conta bancária: 34
+Maria
+28
+34.0
+
+Vejamos agora um exemplo em que há erro durante a entrada de dados:
+
+Digite seu nome: Minduim
+Digite a sua idade: ABC
+Traceback (most recent call last):
+
+Observa que foi digitado letras onde se pedia números. 
+
+Lembre-se também que em Python sempre deve ser digitado ponto e não vírgula.
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+>>>>>>> 1193b24bc47d658257455f572fb5e1b5b935f6b1
+
+
+
+
+
+
+
+

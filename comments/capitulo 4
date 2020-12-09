@@ -1,0 +1,81 @@
+Capítulo 4 - Condições
+
+4.1 if
+
+As condições servem para ativar ou não um programa.
+Em Python, a estrutura de decisão é o if. Seu formato é:
+
+if <condição>:
+    bloco verdadeiro
+
+Se a condição for verdadeira será feito algo. 
+
+Exemplo: 
+
+# programa 4.1 - lê dois valores e imprime qual é o maior 
+
+a = int(input("Primeiro valor: "))
+b = int(input("Segundo valor: "))
+if a>b:
+    print("O primeiro valor é o maior!")
+if b>a:
+    print("O segundo valor é o maior!")
+
+Percebe que ao rodar o programa o valor impresso vai depender do número que 
+foi colocado. Podendo imprimir o primeiro ou segundo bloco, o que dependerá
+da entrada dos dados pelo usuário. 
+
+Trívia - Pyhton é uma das poucas linguagens de programação que utiliza o deslocamento
+do texto à direita(recuo) para marcar o início e o fim de um bloco. Outras linguagens
+contam com palavras especiais para isso, como BEGIN e END, em Pascal; ou as famosas 
+chaves ({}), em C e Java. 
+
+4.2 - Faça um programa que seja solicitado a idade do carro do usuário e, em seguida, 
+escreveremos novo se o carro tiver menos de três anos; ou velho, caso contrário.
+
+# Programa 4.2 - Carro novo ou velho, dependendo da idade.
+
+idade = int(input("Digite a idade do seu carro: "))
+if idade <= 3:
+    print("Seu carro é novo")
+if idade > 3:
+    print("Seu carro é velho")
+
+# Programa 4.3 - Cálculo do Imposto de Renda
+
+salário = float(input("Digite o salário para cálculo do imposto: "))
+base = salário 
+imposto = 0
+if base > 3000:
+    imposto = imposto + ((base - 3000) * 0.35)
+    base = 3000
+if base > 1000:
+    imposto = imposto + ((base - 1000) * 0.20)
+print(f"Salário: R${salário:6.2f} Imposto a pagar: R${imposto:6.2f}")
+
+
+4.2 else
+
+Quando há problemas, como a mensagem do carro velho(Programa 4.3), na qual a segunda 
+condição é simplesmente o inverso da primeira, podemos usar outra forma de if para 
+simplificar os programas. Essa forma é a cláusua seja falso, sem precisarmos de um 
+novo if. Vejamos como ficaria o programa reescrito para usar else:
+
+# Programa 4.4 - Carro novo ou velho, dependendo da idade com else
+
+idade = int(input("Digite a idade de seu carro: "))
+if idade <= 3:
+    print("Seu carro é novo")
+else:
+    print("Seu carro é velho")
+
+A vantagem de usar else é deixar os programas mais claros, uma vez que podemos 
+expressar o que fazer caso a condição especificada em if seja falsa. A linha 
+2 só é executada se a condição idade <= 3 for falsa.
+
+4.3 Estruturas Aninhadas 
+
+
+
+
+
