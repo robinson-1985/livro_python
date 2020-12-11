@@ -75,6 +75,84 @@ expressar o que fazer caso a condição especificada em if seja falsa. A linha
 
 4.3 Estruturas Aninhadas 
 
+Nem sempre os programas são simples, muitas vezes temos que aninhar vários if para 
+obter o comportamento desejado do programa. Aninhar, nesse caso, é utilizar um if 
+dentro do outro. 
+
+Exemplo: Empresa de telefonia Tchau. Calcular o custo da conta de celular.
+
+Planos da empresa tchau são bem interessantes, e oferecem diversos pacotes. 
+Abaixo de 200 minutos a empresa cobra R$0,20 por minuto. Entre 200 e 400
+minutos, o preço é de R$0,18. Acima de 400 minutos, o preço por minuto é de R$0,15.
+
+Vejamos: # Programa 4.5 - Conta de telefone com três faixas de preços.
+
+minutos = int(input("Quantos minutos você utilizou este mês: "))
+if minutos < 200:
+    preço = 0.20
+else:
+    if minutos < 400:
+        preço = 0.18
+    else:
+        preço = 0.15
+print(f"Você vai pagar este mês: R${minutos * preço: 6.2f}")    
+
+# Programa 4.6 - Categoria x preço
+
+categoria = int(input("Digite a categoria do produto: "))
+if categoria == 1:
+        preço = 10
+else:
+    if categoria == 2:
+        preço = 18
+    else:
+        if categoria == 3:
+            preço = 23
+        else:
+            if categoria == 4:
+                preço = 26
+            else: 
+                if categoria == 5:
+                    preço = 31
+                else: 
+                if categoria == 5:
+                    preço = 31
+                else:
+                    print("Categoria inválida, digite um valor entre 1 e 5!")
+                    preço = 0
+print(f"O preço do produto do produto é: R${preço:6.2f}")
+
+Observe que o alinhamento se tornou um grande problema, e que o código não ficou muito
+apresentável ao deslocarmos cada else à direita.
+
+4.4 elif
+
+O Pyhton apresenta uma solução plausivel para esse problema de múltiplos if aninhados.
+A cláusula elif substitui um par else if, mas sem criar outro nível de estrutura, 
+evitando problemas de deslocamentos desnecessários à direita.
+
+Refazendo o programa 4.6 dessa vez usando elif;
+
+# Programa 4.7 - categoria x preço, usando elif
+
+categoria = int(input("Digite a categoria do produto: "))
+if categoria == 1:
+    preço = 10
+elif categoria == 2:
+     preço = 18
+elif categoria == 3:
+     preço = 23
+elif categoria == 4:
+     preço = 26
+elif categoria == 5:
+     preço = 31
+elif categoria == 5:
+     preço = 31
+else:
+    print("Categoria inválida, digite um valor entre 1 e 5!")
+    preço = 0
+print(f"O preço do produto do produto é: R${preço:6.2f}")
+
 
 
 
