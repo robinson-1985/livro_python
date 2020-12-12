@@ -1,5 +1,5 @@
-''' 4.10 Escreva um programa que calcule o preço a pagar pelo fornecimento de egergia
-elétrica. pergunte a quantidade kWh consumida e o tipo de Instalação: R para residências,
+''' 4.10 Escreva um programa que calcule o preço a pagar pelo fornecimento de energia
+elétrica. pergunte a quantidade kWh consumida e o tipo de instalação: R para residências,
 I para indústrias e C para comércios. Calcuele o preço a pagar de acordo coma a tabela
 a seguir:
                 Preço por tipo e faixa de consumo
