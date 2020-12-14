@@ -1,0 +1,47 @@
+Capítulo 5 - Repetições.
+
+Repetições representam a base de vários programas. São utilizadas para executar a mesma 
+parte de um programa várias vezes. Por exemplo, para imprimir três números na tela, 
+poderíamos escrever um programa como:
+
+print(1)
+print(2)
+print(3)
+
+Podemos imaginar que para imprimir três números, começando de 1 até o 3, devemos variar
+print(x), em que x varia de 1 a 3. Vejamos:
+
+x = 1
+print(x)
+x = 2
+print(x)
+x = 3
+print(x)
+
+Outra solução seria incrementar o valor de x após cada print:
+
+x = 1
+print(x)
+x = x + 1
+print(x)
+x = x + 1
+print(x)
+
+E se fosse para escrever 100 números? Seria extremamente desagradável escrever 200 
+linhas. Para isto, a estrutura de repetição aparece para auxiliar esse tipo de problema. 
+Uma das estruturas de repetição do Python é o while, que repete um bloco enquanto a 
+condição for verdadeira. Vejamos:
+
+while <condição>:
+    bloco
+
+Para resolver o problema de escrever três números utilizando o while, escreveríamos 
+assim:
+
+x = 1
+while x <= 3:
+    print(x)
+    x = x + 1
+
+
+
