@@ -43,5 +43,30 @@ while x <= 3:
     print(x)
     x = x + 1
 
+5.1 Contadores 
 
+As estruturas de repetições é muito grande. Imaginamos que temos que imprimir os 
+números inteiros entre 1 e um valor digitado pelo usuário. Vejamos:
 
+fim = int(input("Digite o último número a imprimir: "))
+x = 1
+while x <= fim:
+    print(x)
+    x = x + 1
+
+Nesse caso, o programa imprimirá de 1 até o valor digitado. Utilizamos a variável 
+fim para representar o limite de nossa repetição.
+
+Vejamos outra situação: Imprima apenas os números pares entre 0 e um número digitado
+pelo usuário, de forma bem similar ao exemplo anterior. 
+
+fim = int(input("Digite o último número a imprimir: "))
+x = 0
+while x <= fim:
+    if x % 2 == 0:
+        print(x)
+    x = x + 1
+
+Veja que, para começar a imprimir do 0, e não de 1, modificamos. Um detalhe muito 
+importante é que um bloco dentro de if, sendo para isso deslocado à direita.
+Porém, podemos resolver de maneira ainda mais simples: 
