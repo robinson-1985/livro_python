@@ -68,5 +68,30 @@ while x <= fim:
     x = x + 1
 
 Veja que, para começar a imprimir do 0, e não de 1, modificamos. Um detalhe muito 
-importante é que um bloco dentro de if, sendo para isso deslocado à direita.
-Porém, podemos resolver de maneira ainda mais simples: 
+importante é que um bloco dentro de if, sendo para isso deslocado à direita.Porém, 
+podemos resolver de maneira ainda mais simples: 
+
+fim = int(input("Digite o último número a imprimir: "))
+x = 0
+while x <= fim:
+    print(x)
+    x = x + 2
+
+Ou seja, existem mais de uma solução para o problema. Pode ser mais simples ou 
+complicadas, porém, ambas estão corretas.
+
+Vejamos outro problema. Imagine um número de tabuada digitado pelo usuário. Essa 
+tabuada deve ser impressa de 1 a 10, sendo n o número digitado pelo usuário. Teríamos,
+assim, n+1, n+2, ..., n+10.
+
+n = int(input("Tabuada de: "))
+x = 1
+while x <= 10:
+    print(n + x)
+    x = x + 1
+
+
+
+
+
+
