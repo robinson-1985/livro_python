@@ -141,4 +141,22 @@ Exemplo:
 
 média = (n1 + n2 + n3 + n4 + n5)/5 
 
+Em vez de utili zarmos cinco variáveis, vamos acumular os valores à medida que são lidos.
 
+Exemplo de cálculo de média com acumulador:
+
+x = 1
+soma = 0
+while x <= 5:
+    n = int(input(f"{x} Digite o número: "))
+    soma = soma + n
+    x = x + 1
+print(f"Média: {soma/ 5:5.2f}")
+
+Podemos também dizer que soma acumula os valores de n a cada repetição. Logo, diremos 
+que a variável soma é um acumulador.
+Acumuladores são muito interessantes quando não sabemos ou não conseguimos obter o 
+total da soma pela simples multiplicação de dois números. No caso do cálculo da média, 
+o valor de n pode ser diferente cada vez que o usuário digitar um valor.
+
+5.3 Interrompendo a repetição
