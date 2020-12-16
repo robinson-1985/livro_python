@@ -1,7 +1,4 @@
-''' 5.20 O que acontece se digitarmos 0,001 no programa anterior? Caso ele não funcione,
-altere-o de forma a corrigir o problema.'''
-
-#falta terminar
+# 5.17  O que acontece se digitarmos 0 (zero) no valor a pagar?
 
 valor = int(input("Digite o valor a pagar: "))
 cédulas = 0
