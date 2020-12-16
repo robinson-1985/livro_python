@@ -1,0 +1,1 @@
+''' 5.16 Execute o programa (5.1) para os seguintes valores: 501, 745, 384, 2, 7 e  1.'''

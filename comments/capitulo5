@@ -160,3 +160,25 @@ total da soma pela simples multiplicação de dois números. No caso do cálculo
 o valor de n pode ser diferente cada vez que o usuário digitar um valor.
 
 5.3 Interrompendo a repetição
+
+Embora muito útil, a estrutura while só veriﬁca sua condição de parada no início de 
+cada repetição. Dependendo do problema, a habilidade de terminar while dentro do bloco 
+a repetir pode ser interessante.
+A instrução break é utilizada para interromper a execução de while independentemente 
+do valor atual de sua condição. Vejamos o exemplo da leitura de valores até que 
+digitemos 0 (zero):
+
+s = 0
+while True:
+    v = int(input("Digite um número a somar ou 0 para sair: "))
+    if v == 0:
+        break
+    s += v
+print(s)
+
+Nesse exemplo, substituímos a condição do while por True em ❶. Dessa forma, o while 
+executará para sempre, pois o valor de sua condição de parada (True) é constante.
+Em ❷ temos a instrução break sendo ativada dentro de um if, especiﬁcamente quando v 
+é zero.
+
+
