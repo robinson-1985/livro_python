@@ -205,3 +205,18 @@ while True:
         atual = 1
     cédulas = 0
 
+5.4 Repetições aninhadas 
+
+Pode ocorrer a combinação de vários while para obter resultados interessantes como a
+repetição com incremento de duas variáveis. 
+Imagine imprimir as tabuadas de multiplicação de 1 a 10.
+Vejamos:
+
+tabuada = 1
+while tabuada <= 10:
+    número = 1
+    while número <= 10:
+        print(f"{tabuada} x {número} = {tabuada * número}")
+        número += 1
+    tabuada += 1
+
