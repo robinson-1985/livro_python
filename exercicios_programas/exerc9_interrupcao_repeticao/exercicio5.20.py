@@ -23,4 +23,4 @@ while True:
             atual = 5
         elif atual == 5:
             atual = 1
-        cédulas = 0  
+            cédulas = 0  
