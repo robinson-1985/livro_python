@@ -1,5 +1,6 @@
-'''4.2 - Faça um programa que seja solicitado a idade do carro do usuário e, em seguida, 
-escreveremos novo se o carro tiver menos de três anos; ou velho, caso contrário. '''
+''' 4.2 - Faça um programa que seja solicitado a idade do carro do usuário e, em 
+seguida, escreveremos novo se o carro tiver menos de três anos; ou velho, caso 
+contrário. '''
 
 # Programa 4.2 - Carro novo ou velho, dependendo da idade.
 
