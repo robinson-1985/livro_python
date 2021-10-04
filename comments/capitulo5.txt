@@ -220,3 +220,88 @@ while tabuada <= 10:
         número += 1
     tabuada += 1
 
+5.5 F-Strings
+
+Foram introduzidas na versão 3.6 do Python. Com essa síntaxe, é possível substituir 
+o valor de uma variável ou expressão dentro de uma string. Ex:
+
+a = "mundo"
+print(f"Alô {a}")
+Alô mundo
+
+Em que f"Alô{a}" é equivalente a "Alô %s % a ou "Alô {}".format(a).
+
+também podemos especificar f-strings utilizando o nº de caracteres após o 
+nome da variável e dos dois pontos, assim: 
+
+preço = 5.20
+
+f"Preço: {preço: 5.2f}"
+Preço: 5.20
+
+f"Preço: {preço: 10.2f}"
+Preço: 5.20
+
+f"Preço: R${preço: 10.2f}"
+Preço:R$ 5.20
+
+f"Preço: R${preço:.2f}"
+Preço:R$ 5.20
+
+Também podemos utilizar <, > e ^ para alinhar os valores à esquerda, à direita ou 
+ao centro:
+
+f"Preço: R${preço: >10.2f}"
+Preço:R$ 5.20
+
+f"Preço: R${preço: <10.2f}!"
+Preço:R$ 5.20 !
+
+f"Preço: R${preço: ^10.2f}!"
+Preço:R$ 5.20 !
+
+E tb especificar qual caracter deve ser utilizado para preencher os espaços
+em branco:
+
+f"Preço: R${preço: .^10.2f}!"
+Preço:R$...5.20... !
+
+
+f"Preço: R${preço: x^10.2f}!"
+Preço:R$xxx5.20xxx!
+
+f"Preço: R${preço: _^10.2f}!"
+Preço:R$__5.20__!
+
+Essa nova de escrever é tão poderosa que podemos chamar função dentro da f-string:
+
+x = 5.1  
+f"Inteiro: {int(x)}"
+
+'Inteiro: 5'
+
+Assim como realizarmos operações matemáticas:
+
+f"Preço: R${preço *10.5.2f}!"
+Preço:R$ 52.00 !
+
+F-strings tb funcionam com strings de múltiplas linhas, usando-se as aspas triplas prefixadas com a letra f:
+
+f""""
+O preço do novo produto é: R${preço:5.2f}
+E pode ser encontrado nas melhores lojas do ramo
+"""
+'\nO preço do novo produto é: R$ 5.20.\nE pode ser encontrado nas melhores lojas 
+do ramo.\n'
+
+Observe que as linhas foram representadas com \n. Esta combinação de caracteres é 
+utilizada para representar uma quebra de linha e você pode utilizá-la em suas 
+strings.
+
+a = "primeira linha\nsegunda linha\nterceira linha"
+a
+'primeira linha\nsegunda linha\nterceira linha'
+print(a)
+primeira linha
+segunda linha
+terceira linha
