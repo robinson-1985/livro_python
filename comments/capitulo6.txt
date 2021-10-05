@@ -1,2 +1,70 @@
 Capítulo 6: Listas, dicionários, tuplas e conjuntos. 
 
+Listas são um tipod de variável que permite o armazenamento de vários valores 
+acessados por um indíce. Ela pode conter zero ou mais elementos de um mesmo tipo ou de tipos diversos, podendo inclusive conter outras listas.Exemplos:
+
+L = []
+
+Essa linha cria uma lista chamada L com zero elemento, ou seja, é uma lista vazia. 
+
+z = [15, 8, 9]
+
+Essa lista tem três elementos. O tamanho da lista é três. Começamos com zero e 
+terminanmos em dois. 
+
+z = [15, 8, 9]
+z = [0]
+15 (que corresponde ao primeiro elemento da lista)
+
+Podemos mudar o conteúdo da lista:
+
+z = [15, 8, 9]
+z = [0]
+15
+z[0] = 7
+z[0]
+7
+z = [7, 8, 9]
+
+Exemplo: 
+
+Um aluno tem cinco notas e desejamos calcular a média aritmética dele:
+
+# Programa 6.1 - Cálculo da média
+
+notas = [6, 7, 5, 8, 9]
+soma = 0
+x = 0
+while x < 5:
+    soma += notas[x]
+    x += 1
+print(f"Média: {soma / x:5.2f}")  
+
+Uma das vantagens desse programa foi que não precisamos declarar cinco Variáveis
+para guardar as cinco notas. 
+
+Vejamos uma modificação desse exemplo, mas, dessa vez, vamos ler as notas uma a uma:
+
+# Programa 6.2 - Cálculo da média com notas digitadas
+
+notas = [0, 0, 0, 0, 0]
+soma = 0
+x = 0
+while x < 5:
+    notas[x] = float(input(f"Nota {x}:"))
+    soma += notas[x]
+    x += 1
+x = 0
+while x < 5:
+    print(f"Nota {x}: {notas[x]:6.2f}")
+    x += 1
+print(f"Média: {soma / x:5.2f}")
+
+
+
+
+
+
+
+
+
