@@ -60,11 +60,229 @@ while x < 5:
     x += 1
 print(f"Média: {soma / x:5.2f}")
 
+6.1 Trabalhando com índices
 
+Vamos ver outro exemplo: um programa que lê cinco números, armazena-os em uma lista de 
+e depois solicita ao usuário que escolha um número a mostrar. O objetivo é, p.e., ler 
+15, 12, 5, 7 e 9 e armazená-los na lista. Depois, se o usuário digitar 2, ele imprimirá 
+o segundo número digitado, 3, o terceiro, e assim sucessivamente. Observe que o índice 
+do primeiro número é 0, e não 1: essa pequena conversão será feita no programa:
 
+# Programa 6.3 - Apresentação de números
 
+números = [0, 0, 0, 0, 0]
+x = 0
+while x < 5:
+    números[x] = int(input(f"Número {x + 1}:"))
+    x += 1
+while True:
+    escolhido = int(input("Que posição você quer imprimir (0 para sair): "))
+    if escolhido == 0:
+        break
+    print(f"Você escolheu o número: {números[escolhido - 1]}")
 
+6.2 Cópia e fatiamento de listas
 
+O recurso em Python de listas é muito poderoso, mas, pode trazer alguns efeitos indesejáveis
+como quando tentamos fazer cópias de listas. Exemplo:
 
+l = [1,2,3,4,5]
+v = l
+l
+[1,2,3,4,5]
+v
+[1,2,3,4,5]
+v[0] = 6
+v
+[6,2,3,4,5]
+l
+[6,2,3,4,5]
 
+Observe que ao mudarmos v, modificamos também l. Isso porque uma lista em Pyhton é um objeto e,
+qaundo atribuímos um objeto a outro, estamos apenas copiando a mesma referência da lista, e não 
+seus dados em si. Nesse caso, v funciona como um apelido de l, ou seja, v e l são a mesma lista. 
+
+Quando modificamos v[0], estamos modificando o mesmo valor de l[0], pois ambos são referências, 
+ou apelidos para a mesma lista na memória.
+
+l -->
+            1 | 2 | 3 | 4 | 5 |
+v -->
+
+Dependendo da aplicação, esse efeito pode ser desejado ou não. Para criar uma cópia independente
+ de uma lista, utilizamos outra síntaxe. Vejamos:
+
+ l = [1,2,3,4,5]
+ v = l[:]
+ v[0] = 6
+ l 
+ [1,2,3,4,5]
+ v
+[6,2,3,4,5]
+
+Ao escrevermos l[:] referenciamos a uma nova cópia de l. Assim, le e v se referem a áreas
+diferentes na memória, permitindo alterá-las de forma independente. Vejamos:
+
+l --> 1 | 2 | 3 | 4 | 5 |
+
+v --> 1 | 2 | 3 | 4 | 5 |
+
+Podemos também fatuar uma lista, da mesma forma que fizemos com strings no Capítulo 3. Observe:
+
+l = [1,2,3,4,5]
+l[0:5]
+[1,2,3,4,5]
+l[:5]
+[1,2,3,4,5]
+l[:-1]
+[1,2,3,4]
+l[1:3]
+[2,3]
+l[1:4]
+[2,3,4]
+l[3:]
+[4,5]
+l[:3]
+[1,2,3]
+l[:-1]
+5
+l[-2]
+4
+
+Os índices negativos também funcionam. O índice neativo começa a contar do último elemento.
+Assim, [0] representa o primeiro elemento; l[-1], o último, l[-2], o penúltimo, assim por diante. 
+
+6.3 Tamanho de listas
+
+Usamos a função len com listas. O valor retornando é igual ao número de elementos da lista. 
+Vejamos:
+
+l = [12,9,5]
+len(l)
+3
+v = []
+len(v)
+0
+
+A função len pode ser utilizada em repetições para controlar o limite dos índices:
+
+#Programa 6.4 - Repetição com tamanho fixo da lista.
+
+l = [1,2,3]
+x = 0
+while x < 3:
+    print(l[x])
+    x += 1
+
+Isso pode ser reescrito como:
+
+#Programa 6.5 - Repetição com tamanho da lista usando len.
+
+l = [1,2,3]
+x = 0
+while x < len(l):
+    print(l[x])
+    x += 1
+
+A vantagem é que se trocarmos l para:
+
+l = [7,8,9,10,11,12]
+
+o resto do programa continuarua funcionando, porque utilizamos a função len para
+calcular o tamanho da lista. 
+
+6.4 Adição de elementos
+
+Para add um elemento ao fim da lista, utilizamos o método append. Chamamos um método 
+escrevendo o nome dele após o nome do objeto. Como listas são objetos, sendo l a lista,
+teremos l.append(valor).
+
+l = []
+l.append("a")
+l 
+['a']
+l.append("b")
+l
+['a,b']
+l.append("c")
+l
+['a,b,c']
+len(l)
+3
+
+Vejamos um programa que lẽ números até que 0 seja digitado. Esse programa depois 
+os imprimirá na mesma ordem em que foram digitados.
+
+# Programa 6.6 - Adição de elementos à lista
+
+l = []
+while True:
+    n = int(input("Digite um número (0 sai):"))
+    if n == 0: 
+        break
+    l.append(n)
+x = 0
+while x < len(l):
+    print(l[x])
+    x += 1
+
+Esse programa é capaz de ler e imprimir um número inicialmente indeterminado de valores. 
+Isso é possível porque adicionamos elementos à lista  l, conforme necessário. 
+
+Temos outra de acrescentarmos elementos à lista utilizando o +:
+
+l = []
+l = l + [1]
+l
+[1]
+l += [2]
+l
+[1,2]
+l
+[1,2]
+l += [3,4,5]
+l
+[1,2,3,4,5]
+
+Quando adicionamos apenas um elemento tanto l.append(1) quanto l + [1] produzem o mesmo 
+resultado.
+Perceba que em l + [1] escrevemos o elemento a adicionar dentro de uma lista ([1]), e que,
+em append, apenas. Isso porque, quando adicionamos uma lista a outra, o interpretador executa
+um método chamado extend, que adiciona os elementos de uma lista a outra:
+
+l = ["a]
+l.append("b")
+l
+['a','b']
+l.extend(["c"])
+l
+['a','b','c']
+l.append(["d", "e"])
+l
+['a','b','c',['d','e']]
+l.extend(["f","g","h"])
+l
+['a','b','c',['d','e'],'f','g','h']
+
+O método exten sequer aceita parãmetros que não sejam listas. Se você utilizar 
+o método append com umna lista como parãmetro, em vez de adicionar os elementos
+no fim da lista, append add a lista inteira, mas, como apenas um novo elemento.
+Teremos então listas dentro de listas:
+
+l = ["a]
+l.append(["b"])
+l.append(["c", "d"])
+len(l)
+3
+l[1]
+['b']
+l[2]
+['c', 'd']
+len(l[2])
+2
+l[2][1]
+'d'
+
+Ess econceito permite a utilização de estruturas de dados mais complexas, como matrizes, 
+árvores e registros. 
 

@@ -16,4 +16,4 @@ elif categoria == 5:
 else:
     print("Categoria inválida, digite um valor entre 1 e 5!")
     preço = 0
-print(f"O preço do produto do produto é: R${preço:6.2f}")
+print(f"O preço do produto do produto são: R${preço:6.2f}")
