@@ -7,7 +7,7 @@ print(f'Lista B: {b}')
 
 print('\n\n')
 
-# para fazer uma cópia, iremos procede assim:
+# para fazer uma cópia, iremos proceder assim:
 
 a = [2, 3, 4, 7]
 b = a[:] # esse sinal : significa que estamos fatiando a lista
